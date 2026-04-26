@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <center>
+      <h1>Weather App</h1>
+      <h2>Which city?</h2>
+      <input type="search" id="cityInput" placeholder="Enter city"/>
+      <br/><br/>
+      <input type="submit" id="getWeather" value="Search" />
+
+      <div id="result"></div>
+
+      <h3 id="date"></h3>
+    </center>
+
+    <script type="module" src="./app.js"></script>
+
+    <script>
+      const curDate = document.getElementById("date");
+
+      const getCurrentDay = () => {
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        let currentTime = new Date();
+        let day = weekday[currentTime.getDay()];
+        return day;
+      };
+
+      const getCurrentTime = () => {
+        var months = [
+          "Jan",
+          "Feb",
+          "March",
+          "April",
+          "May",
+          "Jun",
+          "July",
+          "August",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = months[now.getMonth()];
+
+        var date = now.getDate();
+
+        let hours = now.getHours();
+        let mins = now.getMinutes();
+
+        let period = "AM";
+
+        if (hours > 11) {
+          period = "PM";
+          if (hours > 12) hours -= 12;
+        }
+
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+
+        return `${date} ${month} ${year} | ${hours}:${mins} ${period}`;
+      };
+      curDate.innerHTML = getCurrentDay() + " | " + getCurrentTime();
+    </script>
+  </body>
+</html>

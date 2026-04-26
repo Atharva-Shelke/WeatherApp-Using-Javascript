@@ -1,0 +1,18 @@
+{
+  "weather": [
+    {
+      "main": "Clouds",
+      "description": "overcast clouds"
+    }
+  ],
+  "main": {
+    "temp": 32.42,
+    "temp_min": 32.42,
+    "temp_max": 32.42
+  },
+  "sys": {
+    "country": "IN"
+  },
+  "name": "Pune",
+  "cod": 200
+}
