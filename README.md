@@ -74,7 +74,7 @@ http://localhost:8080
 
 ## 🔄 Application Modes
 
-### 🟢 Local Mode (Mock JSON)
+### 💻 Local Mode (Mock JSON)
 
 Uses static JSON data for testing without API calls.
 
@@ -92,7 +92,7 @@ USE_LOCAL: true
 Fetches real-time data from OpenWeather API.
 
 Configure in `config.js`:
-``
+```
 USE_LOCAL: false
 ```
 
