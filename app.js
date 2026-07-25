@@ -22,10 +22,35 @@ button.addEventListener("click", async () => {
 const renderWeather = (data) => {
   const { name, main, weather, sys } = data;
 
+  const icon = getWeatherIcon(weather[0].main);
+
   resultDiv.innerHTML = `
-    <h1>Weather in ${name},${sys.country}</h1>
-    <h2>Temperature : ${main.temp} &deg;c</h2>
-    <h3>Maximum : ${main.temp_max} &deg;c | Minimum : ${main.temp_min} &deg;c</h3>
-    <h2>Sky Conditions : ${weather[0].main}-${weather[0].description}</h2>
-  `;
+    <h1>${icon} ${name}, ${sys.country}</h1>
+    <h2>${main.temp} °C</h2>
+    <h3>⬆ ${main.temp_max} °C &nbsp;&nbsp; ⬇ ${main.temp_min} °C</h3>
+    <h3>${weather[0].main} - ${weather[0].description}</h3>
+`;
+};
+
+const getWeatherIcon = (condition) => {
+    switch (condition) {
+        case "Clear":
+            return "☀️";
+        case "Clouds":
+            return "☁️";
+        case "Rain":
+            return "🌧️";
+        case "Drizzle":
+            return "🌦️";
+        case "Thunderstorm":
+            return "⛈️";
+        case "Snow":
+            return "❄️";
+        case "Mist":
+        case "Fog":
+        case "Haze":
+            return "🌫️";
+        default:
+            return "🌍";
+    }
 };
