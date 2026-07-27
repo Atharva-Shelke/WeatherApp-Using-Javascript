@@ -1,33 +1,55 @@
-# Weather App (JavaScript ES6)
+# 🌦️ Weather App using JavaScript (ES6)
 
-A simple weather application built using modern JavaScript (ES6) that fetches weather data either from a local JSON file (for offline/testing) or from the OpenWeather API (for live data).
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat&logo=javascript&logoColor=white)
+![Fetch API](https://img.shields.io/badge/API-Fetch-success)
+![npm](https://img.shields.io/badge/Package_Manager-npm-CB3837?logo=npm&logoColor=white)
 
-## 🚀 Features
+A weather application built using **JavaScript ES6 modules** that fetches weather information either from the **OpenWeather API** or a JSON file for local testing. The project demonstrates modern JavaScript concepts such as modules, asynchronous programming, API integration, and DOM manipulation.
+
+---
+
+## ✨ Features
 
 - Search weather by city name
-- Fetch real-time weather data from OpenWeather API
-- Local JSON mode for offline/testing
+- Fetch real-time weather data from the OpenWeather API
+- Supports two data sources:
+  - Local JSON (development/testing)
+  - OpenWeather API (live weather)
 - Displays:
-  - Temperature
-  - Min/Max temperature
-  - Weather conditions
+  - Current temperature
+  - Minimum and maximum temperature
+  - Weather condition
   - Country
 - Displays current date and time
-- Error handling for invalid city input
+- Easily switch between mock and live API data
+-The application displays appropriate error messages when:
+  - The city name is invalid
+  - The weather service returns an error
+  - API requests fail
+
+---
 
 ## 🛠️ Tech Stack
 
-- JavaScript (ES6 Modules)
-- HTML5
-- Fetch API
-- npm (project setup and dependency management)
-- live-server (local web server)
+| Category | Technology |
+|----------|------------|
+| Frontend | HTML5, CSS3 |
+| Language | JavaScript (ES6 Modules) |
+| HTTP | Fetch API |
+| External API | OpenWeather API |
+| Package Manager | npm |
+| Development Server | live-server |
 
-## 📂 Project Structure
+---
 
-```
-.
+## 📁 Project Structure
+
+```text
+WeatherApp-Using-Javascript/
 ├── index.html
+├── styles.css
 ├── app.js
 ├── api.js
 ├── config.js
@@ -38,80 +60,118 @@ A simple weather application built using modern JavaScript (ES6) that fetches we
 └── README.md
 ```
 
-## 📋 Prerequisites
+---
 
-Make sure you have the following installed:
+## 🧠 Concepts Demonstrated
 
-- Node.js (v14 or higher recommended)
+- ES6 Modules (`import` / `export`)
+- Fetch API
+- Asynchronous programming with `async/await`
+- DOM manipulation
+- JSON parsing
+- Error handling
+- API integration
+- Configuration-based environment switching
 
-Verify installation:
+---
 
-```
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm
+
+Verify your installation:
+
+```bash
 node -v
-```
-```
 npm -v
 ```
 
-## ⚙️ Installation & Setup
+### Clone the Repository
 
-1. Clone the repository
-
-2. Install dependencies
+```bash
+git clone https://github.com/Atharva-Shelke/WeatherApp-Using-Javascript.git
 ```
+
+### Install Dependencies
+
+```bash
 npm install
 ```
 
-3. Run the application
-```
+### Run the Application
+
+```bash
 npm start
 ```
+The application is served using **live-server**, allowing ES6 modules and local JSON files to be loaded correctly.
 
-4. Open in browser
-```
+Open your browser and navigate to:
+
+```text
 http://localhost:8080
 ```
 
 ## 🔄 Application Modes
 
-### 💻 Local Mode (Mock JSON)
-
-Uses static JSON data for testing without API calls.
-
-Configure in `config.js`: 
-``
-USE_LOCAL: true
-``
-- No internet required
-- Useful for development/testing
-
----
-
-### 🌐 Live Mode (API)
-
-Fetches real-time data from OpenWeather API.
+### 💻 Local Mode
 
 Configure in `config.js`:
+
+Uses the local `mock.json` file instead of calling the OpenWeather API.
+
+In `config.js`:
+
+```javascript
+USE_LOCAL: true
 ```
+
+This mode:
+
+- Does not require an internet connection
+- Is useful for testing and development
+
+### 🌐 Live Mode
+
+Fetches real-time weather data from the OpenWeather API.
+
+In `config.js`:
+
+```javascript
 USE_LOCAL: false
 ```
 
+This mode requires an active internet connection.
+
+**Note:** The API key is stored in the frontend for demonstration purposes. In a production application, it should be secured using environment variables or a backend service.
+
 ---
 
-## 🌐 API Used
+## 📸 Screenshots
 
-- OpenWeather API (https://api.openweathermap.org)
+### Weather Search
 
-> Note: API key is stored in frontend for simplicity. In production, it should be secured using environment variables or backend.
+![Weather Search](screenshots/weather-search.png)
 
-## 📖 Learning Outcomes
+### Weather Result
 
-This project demonstrates:
+![Weather Result](screenshots/weather-result.png)
 
-- ES6 modules (`import` / `export`)
-- API integration using Fetch
-- Asynchronous JavaScript (`async/await`)
-- DOM manipulation
-- Error handling in frontend applications
-- Running apps using a local web server
-- Switching between mock and live data sources
+### Invalid City
+
+![Invalid City](screenshots/invalid-city.png)
+
+---
+
+## 📚 Key Concepts Demonstrated
+
+- Building applications with ES6 Modules
+- Integrating third-party REST APIs
+- Using the Fetch API with `async/await`
+- Handling asynchronous operations
+- Manipulating the DOM dynamically
+- Working with JSON data
+- Managing configuration for multiple environments
+
